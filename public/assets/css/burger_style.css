@@ -1,0 +1,63 @@
+body {
+    margin: 0 auto;
+    background-image: url("../img/burger_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Permanent Marker", cursive;
+}
+
+.top-container {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#input {
+    background: white;
+    width: 200px;
+    text-align: center;
+}
+
+#submit-btn {
+    width: 120px;
+    border-radius: 10px;
+    font-family: "Permanent Marker", cursive;
+}
+
+.card {
+    min-width: 340px;
+    min-height: 375px; 
+}
+
+.items {
+    margin: 3px;
+}
+
+footer {
+    position: relative;
+    bottom: -100px;
+    background-color: rgba(87, 113, 127, 0.4);
+    text-align: center;
+    min-height: 30px;
+}
+
+footer a {
+    color: white;
+    bottom: 0;
+}
