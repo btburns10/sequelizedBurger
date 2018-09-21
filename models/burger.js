@@ -1,16 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
-    var burger = sequelize.define("burger", {
+    var burger = sequelize.define("Burger", {
         burger_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate:{
+                notEmpty: true
+            }
         },
         devoured: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
-        },
-        createdAt: {
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.literal("CURRENT_TIMESTAMP")
         }
     });
     return burger;

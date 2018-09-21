@@ -4,8 +4,7 @@ $(function() {
         event.preventDefault();
         console.log("click");
         var newBurger = {
-            burgerName: $("#input").val().trim(),
-            devoured: false
+            burgerName: $("#input").val().trim()
         };
 
         $.post("/api/burgers", newBurger)

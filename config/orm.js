@@ -1,5 +1,6 @@
 const connection = require("./connection");
 
+
 //helper functions for query structuring
 function printQuestionMarks(num) {
     var arr = [];
