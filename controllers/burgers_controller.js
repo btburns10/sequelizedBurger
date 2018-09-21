@@ -1,9 +1,9 @@
-const express = require("express");
 const db = require("../models/burger");
 
-const router = express.Router();
 
-router.get("/", function(req, res) {
+module.exports = function(app) {
+
+app.get("/", function(req, res) {
     db.Burger.findAll({}).then(function(data) {
         var newBurger = {
             burgers: data
@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
     });
 });
 
-router.get("/api/json", function(req, res) {
+app.get("/api/json", function(req, res) {
     db.Burger.findAll({}).then(function(data) {
         var newBurger = {
             burgers: data
@@ -25,7 +25,7 @@ router.get("/api/json", function(req, res) {
     });
 });
 
-router.post("/api/burgers", function(req, res) {
+app.post("/api/burgers", function(req, res) {
 
     db.Burger.create({
         burger_name: req.body.burgerName
@@ -36,7 +36,7 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+app.put("/api/burgers/:id", function(req, res) {
     var condition = req.params.id;
 
     db.Burger.update({
@@ -65,7 +65,7 @@ router.put("/api/burgers/:id", function(req, res) {
     // });
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
+app.delete("/api/burgers/:id", function(req, res) {
     var condition = req.params.id;
 
     db.Burger.destroy({
@@ -87,9 +87,8 @@ router.delete("/api/burgers/:id", function(req, res) {
 });
 
 //catch all other route paths
-router.get("*", function(req, res) {
+app.get("*", function(req, res) {
     res.send("Sorry our website does not support the current page you are searching for.");
 });
 
-
-module.exports = router;
+}
