@@ -1,14 +1,11 @@
-const db = require("../models/burger");
+const db = require("../models");
 
 
 module.exports = function(app) {
 
 app.get("/", function(req, res) {
     db.Burger.findAll({}).then(function(data) {
-        var newBurger = {
-            burgers: data
-        };
-    res.render("index", newBurger);
+        res.render("index", {burgers: data});
     }).catch(function(err) {
         console.log(err);
     });
@@ -30,7 +27,7 @@ app.post("/api/burgers", function(req, res) {
     db.Burger.create({
         burger_name: req.body.burgerName
     }).then(function(data) {
-        res.json({burger: "New burger " + data + " added"})
+        res.json(data);
     }).catch(function(err) {
         console.log(err);
     });
