@@ -48,18 +48,6 @@ app.put("/api/burgers/:id", function(req, res) {
     }).catch(function(err) {
         console.log(err);
     });
-
-    // burger.update({
-    //     devoured: req.body.devoured}, 
-    //     condition, 
-    //     function(result) {
-    //         if (result.changedRows == 0) {
-    //             // If no rows were changed, then the ID must not exist, so 404
-    //             return res.status(404).end();
-    //           } else {
-    //             res.status(200).end();
-    //           }
-    // });
 });
 
 app.delete("/api/burgers/:id", function(req, res) {
@@ -74,13 +62,6 @@ app.delete("/api/burgers/:id", function(req, res) {
     }).catch(function(err) {
         console.log(err);
     });
-    // burger.delete(condition, function(result) {
-    //     if (result.affectedRows == 0) {
-    //         return res.status(404).end();
-    //       } else {
-    //         res.status(200).end();
-    //       }
-    // });
 });
 
 //catch all other route paths
